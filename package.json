@@ -1,0 +1,135 @@
+{
+  "name": "quartz-navbar",
+  "version": "0.1.0",
+  "description": "Quartz v5 component to display navbar on top of the page",
+  "type": "module",
+  "license": "MIT",
+  "author": "Satche",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/satche/quartz-navbar"
+  },
+  "keywords": [
+    "quartz",
+    "quartz-plugin",
+    "navbar"
+  ],
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./types": {
+      "types": "./dist/types.d.ts",
+      "import": "./dist/types.js"
+    },
+    "./components": {
+      "types": "./dist/components/index.d.ts",
+      "import": "./dist/components/index.js"
+    },
+    "./frames": {
+      "types": "./dist/frames/index.d.ts",
+      "import": "./dist/frames/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "eslint . --max-warnings=0",
+    "format": "prettier . --check",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run typecheck && npm run lint && npm run format && npm run test",
+    "release": "npm run build && changeset publish",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "preact": "^10.0.0",
+    "vfile": "^6.0.3"
+  },
+  "peerDependenciesMeta": {
+    "preact": {
+      "optional": false
+    },
+    "vfile": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@quartz-community/types": "0.3.0",
+    "@quartz-community/utils": "0.1.1"
+  },
+  "devDependencies": {
+    "@types/hast": "^3.0.5",
+    "@types/mdast": "^4.0.4",
+    "@types/node": "^26.1.2",
+    "@typescript-eslint/eslint-plugin": "^8.65.0",
+    "@typescript-eslint/parser": "^8.65.0",
+    "eslint": "^10.8.0",
+    "eslint-config-prettier": "^10.1.8",
+    "github-slugger": "^2.0.0",
+    "hast-util-to-jsx-runtime": "^2.3.6",
+    "mdast-util-find-and-replace": "^3.0.2",
+    "preact": "^10.29.8",
+    "prettier": "^3.9.6",
+    "rehype-slug": "^6.0.0",
+    "remark-gfm": "^4.0.1",
+    "remark-parse": "^11.0.0",
+    "remark-stringify": "^11.0.0",
+    "sass": "^1.102.0",
+    "tsup": "^8.5.1",
+    "typescript": "^5.7.3",
+    "unified": "^11.0.5",
+    "unist-util-visit": "^5.1.0",
+    "vfile": "^6.0.3",
+    "vitest": "^4.1.10",
+    "@changesets/cli": "^2.31.1"
+  },
+  "quartz": {
+    "name": "navbar",
+    "displayName": "Navbar",
+    "category": ["component", "transformer"],
+    "version": "0.0.1",
+    "quartzVersion": ">=5.0.0",
+    "dependencies": [],
+    "defaultOrder": 50,
+    "defaultEnabled": true,
+    "defaultOptions": {},
+    "optionSchema": {
+      "highlightToken": {
+        "type": "enum",
+        "values": [
+          "==",
+          "**",
+          "~~"
+        ]
+      }
+    },
+    "components": {
+      "Navbar": {
+        "displayName": "Navbar",
+        "defaultPosition": "right",
+        "defaultPriority": 50
+      }
+    },
+    "frames": {
+      "NavbarFrame": {
+        "exportName": "NavbarFrame"
+      }
+    }
+  },
+  "engines": {
+    "node": ">=22",
+    "npm": ">=10.9.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
