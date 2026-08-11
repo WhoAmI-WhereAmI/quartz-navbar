@@ -6,14 +6,19 @@ import type {
 
 import style from "./styles/navbar-items.scss";
 
-interface NavbarConfig {
+interface LinksConfig {
   label: string;
   href: string;
   external?: boolean;
 }
 
+interface NavbarConfig {
+  topbar: ["none", "static", "fixed"]
+}
+
 interface Options {
-  links: NavbarConfig[];
+  links: LinksConfig[];
+  navbar: NavbarConfig[];
 }
 
 function NavbarComponent(opts: Options): QuartzComponent {

@@ -1,8 +1,7 @@
 import type { QuartzTransformerPlugin } from "@quartz-community/types"
 import styles from "./styles/global.scss";
 
-/* This transformer is only here to inject globally the navbar's style,
-** even if there's no NavbarFrame used. */
+/* This transformer is only here to inject globally the navbar's style */
 export const NavbarTransformer: QuartzTransformerPlugin = () => {
   return {
     name: "NavbarTransformer",

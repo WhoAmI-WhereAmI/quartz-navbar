@@ -1,80 +1,22 @@
-$mobile: "max-width: 800px";
-$tablet: "min-width: 800px) and (max-width: 1200px";
-$desktop: "min-width: 1200px";
-
 /* NAVBAR BAR
-** Appears when one element has been added to the navbar group */
-#quartz-body:has(> .navbar) {
-  grid-template-areas:
-    "grid-navbar      grid-navbar      grid-navbar"
-    "grid-sidebar-left  grid-header    grid-sidebar-right"
-    "grid-sidebar-left  grid-center    grid-sidebar-right"
-    "grid-sidebar-left  grid-footer    grid-sidebar-right";
-  grid-template-rows: auto auto auto auto;
-
-  @media all and (#{$tablet}) {
-    grid-template-areas:
-      "grid-navbar      grid-navbar"
-      "grid-sidebar-left  grid-header"
-      "grid-sidebar-left  grid-center"
-      "grid-sidebar-left  grid-sidebar-right"
-      "grid-sidebar-left  grid-footer";
-  }
-
-  @media all and (#{$mobile}) {
-    grid-template-areas:
-      "grid-navbar"
-      "grid-sidebar-left"
-      "grid-header"
-      "grid-center"
-      "grid-sidebar-right"
-      "grid-footer";
-  }
+** Use the <header> element to allow user to add others plugin inside via position:header */
+#quartz-body:has(header) {
+    padding-top: 5rem;
 }
 
-#quartz-body > .navbar {
-  grid-area: grid-navbar;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-
-  /* Full width to avoid body padding */
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 1.25rem;
-  padding: 1rem;
-  background-color: var(--light);
-  border-bottom: 1px solid var(--lightgray);
-  flex-wrap: wrap;
-  box-sizing: border-box;
-
-  & > * {
-    flex-shrink: 0;
-  }
-
-  & .flex-component:last-child {
-    /* last item from navbar is pushed to the right */
-    margin-left: auto;
-  }
-}
-
-/* Page header wrapper
-** Mirrors the core Header component (which simply wraps children in
-** <header> and applies this CSS). Inlined here so the frame stays
-** standalone and does not depend on @jackyzha0/quartz internals. */
 header {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 2rem 0;
   gap: 1.5rem;
-}
-
-header h1 {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 1rem;
   margin: 0;
-  flex: auto;
+  background: var(--light);
+  border-bottom: 1px solid var(--lightgray);
 }

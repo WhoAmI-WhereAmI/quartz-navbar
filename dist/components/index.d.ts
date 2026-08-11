@@ -1,12 +1,16 @@
 import { QuartzComponent } from '@quartz-community/types';
 
-interface NavbarConfig {
+interface LinksConfig {
     label: string;
     href: string;
     external?: boolean;
 }
+interface NavbarConfig {
+    topbar: ["none", "static", "fixed"];
+}
 interface Options {
-    links: NavbarConfig[];
+    links: LinksConfig[];
+    navbar: NavbarConfig[];
 }
 declare function NavbarComponent(opts: Options): QuartzComponent;
 

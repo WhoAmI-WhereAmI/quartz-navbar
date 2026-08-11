@@ -1,6 +1,6 @@
 {
   "name": "quartz-navbar",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A Quartz plugin to add navbar on top of the page",
   "type": "module",
   "license": "MIT",
@@ -29,10 +29,6 @@
     "./components": {
       "types": "./dist/components/index.d.ts",
       "import": "./dist/components/index.js"
-    },
-    "./frames": {
-      "types": "./dist/frames/index.d.ts",
-      "import": "./dist/frames/index.js"
     },
     "./package.json": "./package.json"
   },
@@ -95,7 +91,10 @@
   "quartz": {
     "name": "navbar",
     "displayName": "Navbar",
-    "category": ["component", "transformer"],
+    "category": [
+      "component",
+      "transformer"
+    ],
     "version": "0.0.1",
     "quartzVersion": ">=5.0.0",
     "dependencies": [],
@@ -117,11 +116,6 @@
         "displayName": "Navbar",
         "defaultPosition": "right",
         "defaultPriority": 50
-      }
-    },
-    "frames": {
-      "NavbarFrame": {
-        "exportName": "NavbarFrame"
       }
     }
   },

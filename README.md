@@ -1,10 +1,6 @@
 # Quartz Navbar plugin
 
-This [Quartz v5](https://quartz.jzhao.xyz/) plugin add a navigation bar at the top of the site, where you can add other plugins inside.
-
-It also provide options to add navigation links rendered as `.navbarItems` and a mobile menu dialog (`.navbar-dialog`).
-
-This repo is based and adapted from the quartz-community [plugin template](https://github.com/quartz-community/plugin-template).
+This [Quartz v5](https://quartz.jzhao.xyz/) plugin provide options to add navigation links to your website. It also display a navbar on top of the page, that you can populate with other plugins.
 
 ## Installation
 
@@ -16,11 +12,7 @@ npx quartz plugin add github:satche/quartz-navbar
 
 ## Usage
 
-This plugin has two features: **navbar items** and **top navbar**.
-
-Add the **navbar items** by enabling the plugin in `quartz.config.yaml`. You can define your links in the plugin options (which take a `label` and a `href`). This will create a simple horizontal bar with your navigation items, that you can position in your page with `layout` (e.g. `beforeBody`).
-
-You can (and probably should) add the navbar items to the **top navbar**, which is fixed on top of the page. You have 2 ways of displaying it.
+Enabling the plugin will display the `header` as a fixed navbar on top of the page. You can populate it with navbar items, or other plugins (e.g. spacer, search, darkmode, etc).
 
 ```yaml
 plugins:
@@ -33,8 +25,7 @@ plugins:
         - label: About
           href: /about
     layout:
-      position: navbar
-      priority: 10
+      position: header
 ```
 
 ## Development
