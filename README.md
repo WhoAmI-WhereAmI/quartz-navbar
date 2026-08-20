@@ -2,6 +2,8 @@
 
 This [Quartz v5](https://quartz.jzhao.xyz/) plugin provide options to add navigation links to your website. It also display a navbar on top of the page, that you can populate with other plugins.
 
+![Screenshot of Quartz navbar render in Desktop](screenshot.png)
+
 ## Installation
 
 Make sure to have [Quartz v5](https://quartz.jzhao.xyz/) installed.
