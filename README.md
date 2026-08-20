@@ -38,6 +38,10 @@ npm install
 npm run dev
 ```
 
+>[!NOTE]
+>The `dist` folder is commited to allow faster build time for Quartz, as stated here:<br>
+>[quartz.jzhao.xyz/cli/plugin#common-workflows](https://quartz.jzhao.xyz/cli/plugin#common-workflows)
+
 ## License
 
 This project is under [MIT License](./LICENSE). You can use, copy and modify it in private or commercial context, as long as you mention the original work.

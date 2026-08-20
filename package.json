@@ -1,6 +1,6 @@
 {
   "name": "quartz-navbar",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A Quartz plugin to add navbar on top of the page",
   "type": "module",
   "license": "MIT",
