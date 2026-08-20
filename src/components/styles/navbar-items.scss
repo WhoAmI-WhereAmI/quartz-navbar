@@ -36,11 +36,11 @@ nav.navbarItems {
         color: var(--tertiary) !important;
       }
     }
+  }
 
-    /* Hide desktop list on mobile */
-    @media all and (max-width: 800px) {
-      display: none;
-    }
+  /* Hide desktop list on mobile */
+  @media all and (max-width: 800px) {
+    display: none;
   }
 }
 
