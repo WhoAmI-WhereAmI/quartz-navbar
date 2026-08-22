@@ -74,11 +74,12 @@ dialog.navbar-dialog {
   border: none;
   background: var(--light);
   color: var(--darkgray);
-  padding: 1rem;
+  padding: 0rem;
   box-sizing: border-box;
   z-index: 200;
 
-  & header {
+  & > header {
+    position: static;
     display: flex;
     align-items: center;
     justify-content: space-between;
