@@ -108,6 +108,19 @@ function NavbarComponent(opts: Options): QuartzComponent {
   };
 
   Component.css = style;
+  Component.afterDOMLoaded = `
+    const closeNavbarDialog = () => {
+      const dialog = document.querySelector("dialog.navbar-dialog")
+      if (dialog?.open) dialog.close()
+    }
+
+    document.addEventListener("prenav", closeNavbarDialog)
+
+    window.addCleanup(() => {
+      document.removeEventListener("prenav", closeNavbarDialog)
+      closeNavbarDialog()
+    })
+  `;
 
   return Component;
 }

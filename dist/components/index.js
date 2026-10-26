@@ -94,6 +94,19 @@ function NavbarComponent(opts) {
     ] });
   };
   Component.css = navbar_items_default;
+  Component.afterDOMLoaded = `
+    const closeNavbarDialog = () => {
+      const dialog = document.querySelector("dialog.navbar-dialog")
+      if (dialog?.open) dialog.close()
+    }
+
+    document.addEventListener("prenav", closeNavbarDialog)
+
+    window.addCleanup(() => {
+      document.removeEventListener("prenav", closeNavbarDialog)
+      closeNavbarDialog()
+    })
+  `;
   return Component;
 }
 function isNavbarItemActive(slug, url) {
